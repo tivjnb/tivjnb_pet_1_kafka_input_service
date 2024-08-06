@@ -11,5 +11,8 @@
     <input type="text" name="task_duration" placeholder="Длительность в секундах" value="10">
     <button type="submit">Отправить</button>
 </form>
+{% if error %}
+    <h2>Ошибка - {{error}}</h2>
+{% endif %}
 </body>
 </html>
