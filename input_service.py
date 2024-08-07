@@ -21,7 +21,8 @@ task_table = Table(
     Column('name', String(100), nullable=False),
     Column('duration', Integer(), nullable=False),
     Column('status', String(50), default='Created'),
-    Column('created_on', DateTime(), default=datetime.now)
+    Column('created_on', DateTime(), default=datetime.now),
+    Column('result', String(200))
 )
 
 engine = create_engine(f"postgresql+psycopg2://user2:123@localhost:5432/{DB_NAME}")
@@ -69,4 +70,4 @@ def create_task():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000)
+    app.run('0.0.0.0', port=8000)
